@@ -53,7 +53,7 @@ function askForReservation(moment, date, nbPerson) {
 
 
 module.exports = () => {
-  const date = "2019-09-25";
+  const date = "2019-08-19";
   const nbPerson = 4;
   askForReservation("noon", date, nbPerson);
 }
