@@ -40,7 +40,7 @@ app.post('/notifications/subscribe', (req, res) => {
   res.status(200).json({ 'success': true })
 });
 
-app.listen(9000, () => console.log('The server has been started on the port 9000'))
+app.listen(9021, () => console.log('The server has been started on the port 9000'))
 
 
 new CronJob('* * * * *', function () {
