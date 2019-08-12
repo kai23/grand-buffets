@@ -26,12 +26,23 @@ app.post('/notifications/subscribe', (req, res) => {
   db.get('subscriptions')
     .push(subscription)
     .write();
+
+
+  const payload = JSON.stringify({
+    title: "Merci d'avoir setup les notifications",
+    body: `On recevra une notif dès que nécessaire :)`,
+  })
+
+  webpush.sendNotification(subscription, payload)
+    .then(result => console.log(result))
+    .catch(e => console.log(e.stack))
+
   res.status(200).json({ 'success': true })
 });
 
 app.listen(9000, () => console.log('The server has been started on the port 9000'))
 
 
-new CronJob('*/5 * * * * *', function () {
+new CronJob('* * * * *', function () {
   send();
 }, null, true, 'Europe/Paris');

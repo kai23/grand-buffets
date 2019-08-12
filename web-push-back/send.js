@@ -7,16 +7,12 @@ const webpush = require('web-push')
 
 function sendNotification(hours) {
 
-  console.log('hours', hours);
-
   const payload = JSON.stringify({
     title: 'Une nouvelle table est disponible !',
     body: `Les horaires disponibles sont ${hours.join(',')}`,
   })
 
   const subscriptions = db.get('subscriptions').value();
-
-  console.log('subscriptions', subscriptions);
 
   subscriptions.forEach(subscription => {
     webpush.sendNotification(subscription, payload)
