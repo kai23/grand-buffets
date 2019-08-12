@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 
 webpush.setVapidDetails("mailto: florian.chevallier03@gmail.com", 'BA13aNs9a9ALPCh2GARkwJ5JJ-fXdvaeo06Q7Du9TsxLvXZT3D19au-onAdpn61340Ey1F3aPsuVTAHEGaxeSZo', 'N70q2-pQYU0qUcXSlVKOsOJHcerIE_xtMlgQZEqD5Nw')
 
-app.post('/notifications/subscribe', (req, res) => {
+app.post('/api/notifications/subscribe', (req, res) => {
   const subscription = req.body
   db.get('subscriptions')
     .push(subscription)
