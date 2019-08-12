@@ -1,0 +1,19 @@
+{
+  "name": "web-push-back",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cron": "^1.7.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "request": "^2.88.0",
+    "web-push": "^3.3.5"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --ignore db.json index.js"
+  }
+}
