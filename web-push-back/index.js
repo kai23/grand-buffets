@@ -44,5 +44,6 @@ app.listen(9021, () => console.log('The server has been started on the port 9000
 
 
 new CronJob('* * * * *', function () {
+  console.log("---- Tentative de récupération des réservations... ----")
   send();
 }, null, true, 'Europe/Paris');
